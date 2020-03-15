@@ -1,4 +1,5 @@
 import rubiks22
+import solver22
 *u, = input().split()
 *d, = input().split()
 *f, = input().split()
@@ -7,3 +8,4 @@ import rubiks22
 *r, = input().split()
 cube = rubiks22.Cube(u, d, f, b, l, r)
 cube.show()
+solver22.solve(cube)
