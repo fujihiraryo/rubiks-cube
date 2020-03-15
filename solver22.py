@@ -9,13 +9,10 @@ def solve(cube):
         c, root = que.popleft()
         if c.solved():
             return root
-            # print(*root)
-            # exit()
-        for op in ['D+', 'D-', 'F+', 'F-', 'R+', 'R-']:
+        for op in ['D+', 'F+', 'R+']:
             cc = c.copy()
             cc.rotate(op)
             que.append((cc, root + [op]))
-        print(*root)
 
 
 if __name__ == '__main__':

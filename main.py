@@ -8,4 +8,4 @@ import solver22
 *r, = input().split()
 cube = rubiks22.Cube(u, d, f, b, l, r)
 cube.show()
-solver22.solve(cube)
+print(*solver22.solve(cube))
