@@ -9,14 +9,16 @@ def solve(cube):
         c, root = que.popleft()
         if c.solved():
             return root
-        for op in ['D+', 'F+', 'R+']:
-            cc = c.copy()
-            cc.rotate(op)
-            que.append((cc, root + [op]))
+        for op in ['D', 'F', 'R']:
+            for cnt in range(1, 3 + 1):
+                cc = c.copy()
+                cc.rotate(op, cnt=cnt)
+                que.append((cc, root + [op + str(cnt)]))
+        print(*root)
 
 
 if __name__ == '__main__':
     cube = rubiks22.Cube()
-    cube.shuffle(n=5)
+    cube.shuffle(n=20)
     cube.show()
-    print(solve(cube))
+    print(*solve(cube))
